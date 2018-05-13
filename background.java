@@ -9,6 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class background extends World
 {
    private paddle paddle;
+  
    
 
     /**
@@ -101,40 +102,7 @@ public class background extends World
         balok balok21 = new balok();
         addObject(balok21, 600, 170);
         balok21.setLocation(655, 169);
-        
-        
-        Counter counter = new Counter();
-        addObject(counter, (counter.getImage().getWidth())/2, (counter.getImage().getHeight())/2);
-        
-        ball ball = new ball(paddle, counter);
-        int xLocation = Greenfoot.getRandomNumber(901);//Set a random location on the X axis.
-        addObject(ball, xLocation, 450);
-        
-        int score = Y_LINES_OF_BRICKS;
-        for (int y = 0; y < Y_LINES_OF_BRICKS; y++){
-            for (int x = 0; x < X_LINES_OF_BRICKS; x++){
-                Brick brick = new Brick(score);
-                int imageSizeX = brick.getImage().getWidth();
-                int imageSizeY = brick.getImage().getHeight();
-                addObject(brick, 150 + imageSizeX/2 + x * (imageSizeX + SPACE), 100 + imageSizeY/2 + y * (imageSizeY + SPACE));
-            }
-            score --;
-        }
-    }
-    
-    /**
-     * A method that remove the brick it get.
-     */
-    public void whichBrickToRemove(Actor actor){
-        howManyBrickLeft--;
-        removeObject(actor);
-    }
-    
-    /**
-     * Gives the number of bricks that stays in the game.
-     */
-    public int getNumberOfBricks(){
-        return howManyBrickLeft;
     }
 }
+
 
