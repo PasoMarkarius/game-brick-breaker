@@ -1,4 +1,4 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot .*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * Write a description of class MyWorld here.
@@ -9,12 +9,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class background extends World
 {
    private paddle paddle;
+   Counter counter = new Counter();
    
 
     /**
      * Constructor for objects of class MyWorld.
      * 
      */
+   
+    
+    
     public background()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -23,6 +27,18 @@ public class background extends World
         paddle = new paddle();
         addObject( paddle, getWidth() /2, getHeight() - 40 );
         prepare ();
+        
+    }
+    
+    public Counter getCounter()
+    {
+        return counter;
+    }
+    
+    
+    public void ball()
+    {
+        paddle.ball();
     }
     
     private void prepare()
@@ -101,9 +117,17 @@ public class background extends World
         balok balok21 = new balok();
         addObject(balok21, 600, 170);
         balok21.setLocation(655, 169);
-        
+        nyawa hati = new nyawa();
+        addObject(hati,710,580);
+        nyawa hati2 = new nyawa();
+        addObject(hati2,730,580);
+        nyawa hati3 = new nyawa();
+        addObject(hati3,750,580);
+        Counter counter = new Counter();
+        addObject(counter,55,25);
+        counter.setLocation(52,18);
     }
-    
+  
    
 }
 
