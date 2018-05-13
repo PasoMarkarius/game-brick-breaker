@@ -1,4 +1,4 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * Write a description of class awal here.
@@ -13,6 +13,19 @@ public class awal extends World
      * Constructor for objects of class awal.
      * 
      */
+    public GreenfootSound music= new GreenfootSound("backgroundMusic.mp3");
+    public void started() 
+    {
+        music.setVolume(60);
+        music.play();
+    }
+    
+    public void stopped ()
+    {
+        music.setVolume(60);
+        music.play();
+    }
+    
     public awal()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.

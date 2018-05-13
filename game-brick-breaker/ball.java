@@ -15,14 +15,8 @@ public class ball extends Actor
     private int deltaX;
     private int deltaY;
     private boolean NeedToInit = true;
-    private GreenfootSound backgroundSound;
     private int mute = 0;
     private int play = 0;
-    
-     public ball(){
-        backgroundSound = new GreenfootSound("backgroundMusic.mp3");
-        backgroundSound.setVolume(50);
-    }
     
     private boolean stuck = true;
     public void act() 
