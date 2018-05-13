@@ -15,12 +15,15 @@ public class ball extends Actor
     private int deltaX;
     private int deltaY;
     private boolean NeedToInit = true;
+    private GreenfootSound backgroundSound;
     private int mute = 0;
     private int play = 0;
+    
     
     private boolean stuck = true;
     public void act() 
     {
+
         if(!stuck)
         {
             move();
@@ -30,6 +33,7 @@ public class ball extends Actor
             Counter counter = bg1.getCounter();
             counter.addScore();
             ballOut();
+            
         }
         
     }
@@ -66,6 +70,9 @@ public class ball extends Actor
     {
         Actor paddle = getOneIntersectingObject(paddle.class);
         if(paddle !=null) {
+            
+            
+        
             deltaY = -deltaY;
             int offset = getX() - paddle.getX();
             deltaX = deltaX + (offset/10);
@@ -104,7 +111,12 @@ public class ball extends Actor
         deltaY = -5;
         stuck = false;
       }
-}
+      
+    }
+
+
+
+
 
 
 

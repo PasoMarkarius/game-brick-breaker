@@ -16,6 +16,18 @@ public class background extends World
      * Constructor for objects of class MyWorld.
      * 
      */
+    public GreenfootSound music = new GreenfootSound ("backgroundMusic.mp3");
+    public void started()
+    {
+        music.setVolume(60);
+        music.play();
+    }
+    
+    public void stopped()
+    {
+        music.setVolume(60);
+        music.play();
+    }
    
     
     
@@ -126,6 +138,9 @@ public class background extends World
         Counter counter = new Counter();
         addObject(counter,55,25);
         counter.setLocation(52,18);
+        back_awal back_awal = new back_awal();
+        addObject(back_awal,765,29);
+        back_awal.setLocation(760,25);
     }
   
    
