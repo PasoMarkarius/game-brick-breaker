@@ -1,92 +1,29 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-
 /**
- * A simple counter with graphical representation as an actor on screen.
+ * Write a description of class Counter here.
  * 
- * @author mik
- * @version 1.0
+ * @author (your name) 
+ * @version (a version number or a date)
  */
 public class Counter extends Actor
 {
-    private static final Color transparent = new Color(0,0,0,0);
-    private GreenfootImage background;
-    private int value;
-    private int target;
-    public int applesEaten = 0;
-    
+    int Score = 0;
     /**
-     * Create a new counter, initialised to 0.
-     */
-    public Counter()
-    {
-        background = getImage();  // get image from class
-        background.setTransparency(150);
-        value = 0;
-        target = 0;
-        updateImage();
-    }
-    
-    /**
-     * Animate the display to count up (or down) to the current target value.
+     * Act - do whatever the Counter wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
-        if (value < target) {
-            value++;
-            updateImage();
-        }
-        else if (value > target) {
-            value--;
-            updateImage();
-        }
+        setImage(new GreenfootImage("Score :" + Score,24, Color.GREEN, Color.BLACK));
+        if (isTouching(balok.class)){
+       Score++;
+       
     }
-
-    /**
-     * Add a new score to the current counter value.
-     */
-    public void add(int score)
-    {
-        target += score;
-    }
-
-    /**
-     * Return the current counter value.
-     */
-    public int getValue()
-    {
-        return value;
-    }
-
-    /**
-     * Set a new counter value.
-     */
-    public void setValue(int newValue)
-    {
-        target = newValue;
-        value = newValue;
-        updateImage();
-    }
-
-    /**
-     * Update the image on screen to show the current value.
-     */
-    private void updateImage()
-    {
-        GreenfootImage image = new GreenfootImage(background);
-        GreenfootImage text = new GreenfootImage("" + value, 22, Color.BLACK, transparent);
-        image.drawImage(text, (image.getWidth()-text.getWidth())/2, 
-                        (image.getHeight()-text.getHeight())/2);
-        setImage(image);
-    }
+    }    
     
-    public void increaseApplesEaten()
+    public void addScore()
     {
-        applesEaten++;
-    }
-    
-    public int getApplesEaten()
-    {
-        return applesEaten;
+        Score++;
     }
 }

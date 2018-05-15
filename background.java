@@ -1,4 +1,4 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot .*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * Write a description of class MyWorld here.
@@ -9,13 +9,30 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class background extends World
 {
    private paddle paddle;
-  
+   private int score ;
+   private int nyawa ;
+   Counter counter = new Counter();
    
 
     /**
      * Constructor for objects of class MyWorld.
      * 
      */
+    public GreenfootSound music = new GreenfootSound ("backgroundMusic.mp3");
+    public void started()
+    {
+        music.setVolume(60);
+        music.play();
+    }
+    
+    public void stopped()
+    {
+        music.setVolume(60);
+        music.play();
+    }
+   
+    
+    
     public background()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
@@ -24,6 +41,18 @@ public class background extends World
         paddle = new paddle();
         addObject( paddle, getWidth() /2, getHeight() - 40 );
         prepare ();
+        
+    }
+    
+    public Counter getCounter()
+    {
+        return counter;
+    }
+    
+    
+    public void ball()
+    {
+        paddle.ball();
     }
     
     private void prepare()
@@ -102,7 +131,34 @@ public class background extends World
         balok balok21 = new balok();
         addObject(balok21, 600, 170);
         balok21.setLocation(655, 169);
+        nyawa hati = new nyawa();
+        addObject(hati,710,580);
+        nyawa hati2 = new nyawa();
+        addObject(hati2,730,580);
+        nyawa hati3 = new nyawa();
+        addObject(hati3,750,580);
+        Counter counter = new Counter();
+        addObject(counter,55,25);
+        counter.setLocation(52,18);
+        back_awal back_awal = new back_awal();
+        addObject(back_awal,765,29);
+        back_awal.setLocation(760,25);
+
+    }
+    public int getscore () {
+        return score ;
+    }
+    
+        public int getnyawa () {
+        return nyawa ;
+    }
+    
+        public void upscore (int x) {
+         score +=x;
+    }
+    
+        public void upnyawa (int x) {
+        nyawa --;
     }
 }
-
 
