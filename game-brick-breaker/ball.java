@@ -18,7 +18,7 @@ public class ball extends Actor
     private GreenfootSound backgroundSound;
     private int mute = 0;
     private int play = 0;
-    
+    int score;
     
     private boolean stuck = true;
     public void act() 
@@ -45,6 +45,7 @@ public class ball extends Actor
         if (getY () == getWorld().getHeight()-1){
             ((background) getWorld ()).ball();
             getWorld().removeObject(this);
+            
         }
         
     }
@@ -96,6 +97,8 @@ public class ball extends Actor
          World world;
          world = getWorld();
          world.removeObject(balok);
+         if (isTouching(balok.class))
+            getWorld().counter++;
          
         if (deltaX > 7) {
                 deltaX = 7;
