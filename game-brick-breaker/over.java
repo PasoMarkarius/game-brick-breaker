@@ -26,11 +26,7 @@ public class over extends World
      */
     private void prepare()
     {
-        menu menu = new menu();
-        addObject(menu,90,452);
-        restart restart = new restart();
-        addObject(restart,724,454);
-        menu.setLocation(77,450);
-        menu.setLocation(76,451);
+        
+        
     }
 }
