@@ -32,6 +32,7 @@ public class ball extends Actor
             background bg1 = (background)world;
             Counter counter = bg1.getCounter();
             counter.addScore();
+            Score();
             ballOut();
             
         }
@@ -95,16 +96,20 @@ public class ball extends Actor
          World world;
          world = getWorld();
          world.removeObject(balok);
+         
         if (deltaX > 7) {
                 deltaX = 7;
         }
         if (deltaX < -7) {
                 deltaX = -7;
         }
-      }
-      
-       
+      }  
     }
+    
+    private void Score()
+    {
+    }
+    
     public void release()
       {
         deltaX = 0;
