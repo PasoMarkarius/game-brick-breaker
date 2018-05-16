@@ -14,12 +14,9 @@ public class restart extends Actor
      */
     public void act() 
     {
-        if(Greenfoot.mouseClicked(this))
-        {
-            Greenfoot.setWorld(new background());
-            Counter.Score = 0;
-            ball.nyawa = 3;
-        }
-        // Add your action code here.
+        if (Greenfoot.mouseClicked(this)){
+        Greenfoot.delay(8);
+        Greenfoot.setWorld(new background());
+    }
     }    
 }

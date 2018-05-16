@@ -39,7 +39,7 @@ public class ball extends Actor
             ballOut();
             
         }
-<<<<<<< HEAD
+        
        if(nyawa == 0)
        {
            Greenfoot.setWorld(new over());
@@ -48,10 +48,6 @@ public class ball extends Actor
        {
            Greenfoot.setWorld(new win());
         }
-=======
-       
-        
->>>>>>> 65aa7be025bf69e7526780fd31ac0f8869ce4a49
     }
       
  
