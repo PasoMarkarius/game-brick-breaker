@@ -1,5 +1,4 @@
-<<<<<<< HEAD:about.java
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
 
 /**
  * Write a description of class about here.
@@ -20,8 +19,7 @@ public class about extends Actor
     }
     }    
 }
-=======
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
 
 /**
  * Write a description of class about here.
@@ -42,4 +40,3 @@ public class about extends Actor
     }
     }    
 }
->>>>>>> 765b2759cc354c4cf5e576729421500b140533a0:game-brick-breaker/about.java
