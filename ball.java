@@ -18,13 +18,17 @@ public class ball extends Actor
     private GreenfootSound backgroundSound;
     private int mute = 0;
     private int play = 0;
-    private int skor = 0;
+    static int skor = 0;
+    static int nyawa = 3;
     
     
     private boolean stuck = true;
     public void act() 
     {
 
+        
+        getWorld().showText("Nyawa : " + nyawa, 750, 550);
+        
         if(!stuck)
         {
             move();
@@ -35,14 +39,21 @@ public class ball extends Actor
             ballOut();
             
         }
-       
-        
+       if(nyawa == 0)
+       {
+           Greenfoot.setWorld(new over());
+       }
+       if(Counter.Score==21)
+       {
+           Greenfoot.setWorld(new win());
+        }
     }
       
  
     private void ballOut()
     {
         if (getY () == getWorld().getHeight()-1){
+            nyawa--;
             ((background) getWorld ()).ball();
             getWorld().removeObject(this);
         }

@@ -131,12 +131,6 @@ public class background extends World
         balok balok21 = new balok();
         addObject(balok21, 600, 170);
         balok21.setLocation(655, 169);
-        nyawa hati = new nyawa();
-        addObject(hati,710,580);
-        nyawa hati2 = new nyawa();
-        addObject(hati2,730,580);
-        nyawa hati3 = new nyawa();
-        addObject(hati3,750,580);
         Counter counter = new Counter();
         addObject(counter,55,25);
         counter.setLocation(52,18);
@@ -145,6 +139,7 @@ public class background extends World
         back_awal.setLocation(760,25);
 
     }
+
     public int getscore () {
         return score ;
     }

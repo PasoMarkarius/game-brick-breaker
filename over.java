@@ -32,5 +32,9 @@ public class over extends World
         addObject(restart,724,454);
         menu.setLocation(77,450);
         menu.setLocation(76,451);
+        restart.setLocation(724,452);
+        menu.setLocation(86,345);
+        restart.setLocation(92,449);
+        restart.setLocation(85,447);
     }
 }
