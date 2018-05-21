@@ -14,5 +14,6 @@ public class balok extends Actor
      */
     public void act() 
     {
+        
     }    
 }
