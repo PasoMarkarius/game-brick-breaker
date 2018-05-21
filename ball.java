@@ -32,11 +32,9 @@ public class ball extends Actor
             world = getWorld();
             background bg1 = (background)world;
             Counter counter = bg1.getCounter();
-            counter.addScore();
             ballOut();
             
         }
-        
        
         
     }
@@ -73,9 +71,6 @@ public class ball extends Actor
     {
         Actor paddle = getOneIntersectingObject(paddle.class);
         if(paddle !=null) {
-            
-            
-        
             deltaY = -deltaY;
             int offset = getX() - paddle.getX();
             deltaX = deltaX + (offset/10);
@@ -89,9 +84,14 @@ public class ball extends Actor
     }
     private void checkbalok()
     {
+      
+      if (isTouching(balok.class)){
+                Counter.Score = Counter.Score + 1;
+        }  
       Actor balok = getOneIntersectingObject(balok.class);
        
         if (balok !=null){
+        
         deltaY = - deltaY;
         int offset = getX() - balok.getX();
         deltaX = deltaX + (offset/10); 
@@ -113,7 +113,7 @@ public class ball extends Actor
     {
         if(isTouching(balok.class)){
             skor++;
-            getWorld().showText("skor="+skor, 300, 300);
+            getWorld().showText("skor="+skor, 400, 300);
         }
     }
     
@@ -123,8 +123,11 @@ public class ball extends Actor
         deltaY = -5;
         stuck = false;
     }
-   
+    
+    
+
 }
+
 
   
 
